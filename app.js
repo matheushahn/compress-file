@@ -9,14 +9,14 @@ console.time('Read File');
 fs.readFile('./alice29.txt', (err, data) => {
   if (err) throw err;
   console.timeEnd('Read File');
-  console.log(`File size before compress: ${data.length}`)
+  console.log(`File size before compress: ${data.length} bytes`)
   
   // compress file
   console.log('\n\n** Compress File **');
   console.time('Compress File');
   fileContent = deflate.deflate(data, 9);
 	console.timeEnd('Compress File');
-  console.log(`File size after compress: ${fileContent.length}`)
+  console.log(`File size after compress: ${fileContent.length} bytes`)
 	
   // write compressed file
   console.time('Write Compressed File');
@@ -32,7 +32,7 @@ fs.readFile('./alice29.txt', (err, data) => {
   let decompressedFile = deflate.inflate(fileContent);
   console.timeEnd('Decompress File');
   let stringContent = dataToString(decompressedFile);
-  console.log(`File size after decompress: ${stringContent.length}`)
+  console.log(`File size after decompress: ${stringContent.length} bytes`)
 
   //write decompressed file
   console.time('Write Decompressed File');
