@@ -18,19 +18,19 @@ fs.readFileAsync('./alice29.txt')
   .then(writeDecompressFile)
   .then(data => {
     console.log('\n\n** App Details **')
-    console.timeEnd('Run Time');
     console.log(`Compression Rate = ${fileSizeDecompressed/fileSizeCompressed}`)
+    console.timeEnd('Run Time');
   })
   .catch(err => console.log(err));
 
 function dataToString (data) {
-  return data.map(function(byte) {
+  return data.map(byte => {
     return String.fromCharCode(byte);
   }).join('');
 }
 
 function compress (data) {
-  return new Promise(function (resolve, reject) {
+  return new Promise( (resolve, reject) => {
     console.timeEnd('Read File');
     console.log(`File size before compress: ${data.length} bytes`);
 
@@ -46,7 +46,7 @@ function compress (data) {
 }
 
 function writeCompressFile(compressedData) {
-  return new Promise(function (resolve, reject) {
+  return new Promise( (resolve, reject) => {
     console.time('Write Compressed File');
     fs.writeFileAsync('./temp/compressed.txt', compressedData)
       .then(res => {
@@ -59,7 +59,7 @@ function writeCompressFile(compressedData) {
 }
 
 function decompress(fileContent) {
-  return new Promise(function (resolve, reject) {
+  return new Promise( (resolve, reject) => {
     console.time('Decompress File');
     console.log('\n\n** Decompress File **');
     let decompressedFile = compression.inflate(fileContent);
@@ -71,7 +71,7 @@ function decompress(fileContent) {
 }
 
 function writeDecompressFile(decompressedData) {
-  return new Promise(function (resolve, reject) {
+  return new Promise( (resolve, reject) => {
     console.time('Write Decompressed File');
     fs.writeFileAsync('./temp/decompressed.txt', decompressedData)
       .then( response => {
