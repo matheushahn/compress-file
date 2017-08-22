@@ -27,6 +27,10 @@ build/Release
 node_modules
 jspm_packages
 
+#Unused files
+temp/*
+package-lock.json
+
 # Optional npm cache directory
 .npm
 
