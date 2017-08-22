@@ -23,12 +23,6 @@ fs.readFileAsync('./alice29.txt', 'utf8')
   })
   .catch(err => console.log(err));
 
-function dataToString (data) {
-  return data.map(function(byte) {
-    return String.fromCharCode(byte);
-  }).join('');
-}
-
 function compress (data) {
   return new Promise(function (resolve, reject) {
     console.timeEnd('Read File');
