@@ -1,0 +1,64 @@
+
+> compress-file@1.0.0 start /Users/matheushahn/Development/compress-file
+> echo '===== Implement #1 - Deflate =====' & node app
+
+===== Implement #1 - Deflate =====
+** Read File **
+Read File: 2.359ms
+File size before compress: 148481 bytes
+
+
+** Compress File **
+Compress File: 109.496ms
+File size after compress: 53367 bytes
+
+
+** Write Compressed File **
+Write Compressed File: 5.499ms
+
+
+** Decompress File **
+Decompress File: 21.023ms
+File size after decompress: 148481 bytes
+
+
+** Write Decompressed File **
+Write Decompressed File: 17.180ms
+
+
+** App Details **
+Run Time: 215.064ms
+Compression Rate = 2.782262446830438
+
+> compress-file@1.0.0 poststart /Users/matheushahn/Development/compress-file
+> 
+
+echo '===== Implement #2 - LZW =====' & node app2
+
+===== Implement #2 - LZW =====
+** Read File **
+Read File: 2.687ms
+File size before compress: 148481 bytes
+
+
+** Compress File **
+Compress File: 64.811ms
+File size after compress: 47898 bytes
+
+
+** Write Compressed File **
+Write Compressed File: 3.714ms
+
+
+** Decompress File **
+Decompress File: 19.964ms
+File size after decompress: 148481 bytes
+
+
+** Write Decompressed File **
+Write Decompressed File: 5.261ms
+
+
+** App Details **
+Run Time: 150.201ms
+Compression Rate = 3.099941542444361
